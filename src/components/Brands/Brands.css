@@ -1,0 +1,173 @@
+#brands {
+  position: relative;
+  overflow: hidden;
+
+  scroll-margin-top: 5.5rem;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(186, 142, 88, 0.45);
+  padding: 4.2rem 0;
+}
+
+.brands_logos {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  pointer-events: none;
+  animation: brands_loop 72s linear infinite;
+
+  opacity: 0.4;
+}
+
+.brands_track {
+  display: flex;
+  align-items: center;
+  gap: 5.5rem;
+
+  margin: 0;
+  padding: 0 2.75rem;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 11.5rem;
+    height: 7.4rem;
+    flex: 0 0 auto;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    opacity: 0.34;
+    mix-blend-mode: screen;
+    filter: grayscale(1);
+  }
+}
+
+@keyframes brands_loop {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brands_content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+
+  h2 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: clamp(1.15rem, 2vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.brands_actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    padding: 0.7rem 1.15rem;
+    border-radius: 6px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  img,
+  svg {
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+}
+
+.brands_call {
+  background: #ff8000;
+  color: #ffffff;
+}
+
+.brands_call:hover {
+  background: #f1700d;
+}
+
+.brands_contact {
+  background: transparent;
+  border: 1px solid #ff8000;
+  color: #ff8000;
+
+  svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linejoin: round;
+  }
+}
+
+.brands_contact:hover {
+  color: #e3bfb1;
+  border-color: #e3bfb1;
+}
+
+@media (max-width: 800px) {
+  #brands {
+    padding: 3.4rem 0;
+  }
+
+  .brands_logos {
+    animation-duration: 56s;
+  }
+
+  .brands_track {
+    gap: 3.2rem;
+    padding: 0 1.6rem;
+
+    li {
+      width: 7rem;
+      height: 4.4rem;
+    }
+  }
+
+  .brands_content {
+    padding: 0 1rem;
+  }
+
+  .brands_actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands_logos {
+    animation: none;
+  }
+}

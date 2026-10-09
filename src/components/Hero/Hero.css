@@ -1,0 +1,215 @@
+#hero {
+  scroll-margin-top: 5.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18rem;
+
+  background:
+    linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
+    url('../../asset/hero.png') no-repeat left top;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 8rem 2rem 0 2rem;
+}
+
+.hero_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: white;
+    font-size: clamp(2.6rem, 5.4vw, 5rem);
+    line-height: 1.05;
+    text-align: center;
+
+    margin: 0;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    font-size: clamp(1.05rem, 1.6vw, 1.75rem);
+
+    margin-top: 1rem;
+  }
+}
+
+.top_line::after {
+  content: ' SUPERCAR';
+  color: #ff8000;
+}
+
+.hero_center_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+
+    background: #ff8000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  a {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+  }
+
+  img {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.hero_center_btn .whatsapp {
+  background: transparent;
+  backdrop-filter: blur(1px);
+
+  border: 1px solid #ff8000;
+}
+
+.hero_center_btn .whatsapp a {
+  color: #ff8000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero_center_btn button,
+  .hero_center_btn a,
+  .whatsapp img {
+    transition: none;
+  }
+}
+
+.hero_botton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 0;
+  background: #1a1a1a;
+
+  width: min(1120px, calc(100% - 2rem));
+
+  ul,
+  li {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.55rem;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    flex: 1;
+  }
+
+  img {
+    width: 1.05rem;
+    height: 1.05rem;
+    object-fit: contain;
+    flex: 0 0 1.05rem;
+  }
+
+  p {
+    margin: 0;
+    color: #8a8a8a;
+    font-size: clamp(0.72rem, 0.9vw, 0.95rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  hr {
+    width: 1px;
+    height: 1.35rem;
+    flex: none;
+
+    border: none;
+    background: rgba(136, 136, 136, 0.55);
+  }
+}
+
+@media (max-width: 800px) {
+  #hero {
+    gap: 3.5rem;
+    padding: 4rem 0 0;
+  }
+
+  .hero_center h1 {
+    font-size: 2.35rem;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .hero_center p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hero_center p br {
+    display: none;
+  }
+
+  .hero_center_btn {
+    flex-wrap: wrap;
+  }
+
+  .hero_botton {
+    width: 100%;
+    padding: 1.35rem 0.5rem;
+  }
+
+  .hero_botton ul {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 0.9rem;
+  }
+
+  .hero_botton li {
+    flex: none;
+    justify-content: flex-start;
+  }
+
+  .hero_botton hr {
+    display: none;
+  }
+
+  .hero_botton p {
+    font-size: 0.72rem;
+  }
+}
