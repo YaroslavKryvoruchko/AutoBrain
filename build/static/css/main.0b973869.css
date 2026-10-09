@@ -352,7 +352,7 @@ header {
 
   background:
     linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
-    url(/static/media/hero.1f2bc7a6.png) no-repeat left top;
+    url(/AutoBrain/static/media/hero.1f2bc7a6.png) no-repeat left top;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -561,7 +561,7 @@ header {
 
   background:
     linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.93)),
-    url(/static/media/about.e85a50bd.png) no-repeat left center;
+    url(/AutoBrain/static/media/about.e85a50bd.png) no-repeat left center;
   background-size: cover;
 
   border-bottom: 1px solid rgba(186, 142, 88, 0.7);
@@ -2447,4 +2447,4 @@ header {
 }
 
 
-/*# sourceMappingURL=main.8c5bb9f3.css.map*/
+/*# sourceMappingURL=main.0b973869.css.map*/
