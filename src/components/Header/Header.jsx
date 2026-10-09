@@ -4,6 +4,7 @@ import INSTAGRAM from '../../asset/instagram.png';
 import FACEBOOK from '../../asset/facebook.png';
 import TICTOK from '../../asset/tictok.png';
 import YOUTUBE from '../../asset/youtube.svg';
+import { PHONE_TEL, SOCIALS } from '../../links';
 
 import './Header.css';
 
@@ -78,14 +79,42 @@ function Header() {
         <p className='header_label'>Social Media</p>
         <div className='social_media'>
           <div className='social_media_icons'>
-            <img src={INSTAGRAM} alt='Instagram' />
-            <img src={FACEBOOK} alt='Facebook' />
-            <img src={TICTOK} alt='TikTok' />
-            <img src={YOUTUBE} alt='YouTube' />
+            <a
+              href={SOCIALS.Instagram}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Instagram'
+            >
+              <img src={INSTAGRAM} alt='' />
+            </a>
+            <a
+              href={SOCIALS.Facebook}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Facebook'
+            >
+              <img src={FACEBOOK} alt='' />
+            </a>
+            <a
+              href={SOCIALS.TikTok}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='TikTok'
+            >
+              <img src={TICTOK} alt='' />
+            </a>
+            <a
+              href={SOCIALS.YouTube}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='YouTube'
+            >
+              <img src={YOUTUBE} alt='' />
+            </a>
           </div>
           <div className='social_media_btn'>
             <button>whatsapp</button>
-            <button>call</button>
+            <a href={PHONE_TEL}>call</a>
           </div>
         </div>
       </div>

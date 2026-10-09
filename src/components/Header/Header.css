@@ -112,7 +112,8 @@ header {
   gap: 0.4rem;
 }
 
-.social_media_btn button {
+.social_media_btn button,
+.social_media_btn a {
   border: 1px solid #f1700d;
   border-radius: 3px;
 
@@ -126,12 +127,14 @@ header {
   margin: 0;
 
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
 
   transition: all 0.4s ease 0s;
 }
 
-.social_media_btn button:hover {
+.social_media_btn button:hover,
+.social_media_btn a:hover {
   color: #e3bfb1;
   border: 1px solid #e3bfb1;
 }

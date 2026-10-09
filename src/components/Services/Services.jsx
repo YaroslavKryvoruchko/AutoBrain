@@ -7,11 +7,12 @@ import INSTAGRAM from '../../asset/instagram.png';
 import FACEBOOK from '../../asset/facebook.png';
 import TICTOK from '../../asset/tictok.png';
 import YOUTUBE from '../../asset/youtube.svg';
+import { PHONE_TEL, SOCIALS } from '../../links';
 
 const socials = [
-  { src: INSTAGRAM, alt: 'Instagram' },
-  { src: FACEBOOK, alt: 'Facebook' },
-  { src: TICTOK, alt: 'TikTok' },
+  { src: INSTAGRAM, alt: 'Instagram', href: SOCIALS.Instagram },
+  { src: FACEBOOK, alt: 'Facebook', href: SOCIALS.Facebook },
+  { src: TICTOK, alt: 'TikTok', href: SOCIALS.TikTok },
 ];
 
 const services = [
@@ -113,7 +114,7 @@ function Icon({ children }) {
 
 function CallLink() {
   return (
-    <a href='tel:+19161234567'>
+    <a href={PHONE_TEL}>
       <svg viewBox='0 0 24 24' aria-hidden='true'>
         <path d='M8.2 3.6h2.1l1 2.8-1.7 1a11.2 11.2 0 0 0 5 5l1-1.7 2.8 1v2.1a1.8 1.8 0 0 1-2 1.8A14.2 14.2 0 0 1 6.4 5.6a1.8 1.8 0 0 1 1.8-2z' />
       </svg>
@@ -154,7 +155,12 @@ function ServiceDetail({ service, onClose, closeRef }) {
       <div className='services_reach'>
         <div className='services_socials'>
           {leftSocials.map((item) => (
-            <a key={item.alt} href='#contact'>
+            <a
+              key={item.alt}
+              href={item.href}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <img src={item.src} alt='' />
               <span>{item.alt}</span>
             </a>
@@ -164,11 +170,19 @@ function ServiceDetail({ service, onClose, closeRef }) {
         <div className='services_aside'>
           <p>Also check out</p>
           <div className='services_socials'>
-            <a href='#contact'>
+            <a
+              href={SOCIALS.TikTok}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <img src={tiktok.src} alt='' />
               <span>{tiktok.alt}</span>
             </a>
-            <a href='#contact'>
+            <a
+              href={SOCIALS.YouTube}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <img src={YOUTUBE} alt='' />
               <span>YouTube</span>
             </a>

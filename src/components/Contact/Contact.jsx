@@ -6,6 +6,7 @@ import INSTAGRAM from '../../asset/instagram.png';
 import FACEBOOK from '../../asset/facebook.png';
 import TICTOK from '../../asset/tictok.png';
 import YOUTUBE from '../../asset/youtube.svg';
+import { EMAIL, EMAIL_MAILTO, PHONE_DISPLAY, PHONE_TEL, SOCIALS } from '../../links';
 
 const services = [
   'Computer diagnostics',
@@ -16,17 +17,23 @@ const services = [
 ];
 
 const socials = [
-  { src: INSTAGRAM, alt: 'Instagram' },
-  { src: FACEBOOK, alt: 'Facebook' },
-  { src: TICTOK, alt: 'TikTok' },
-  { src: YOUTUBE, alt: 'YouTube' },
+  { src: INSTAGRAM, alt: 'Instagram', href: SOCIALS.Instagram },
+  { src: FACEBOOK, alt: 'Facebook', href: SOCIALS.Facebook },
+  { src: TICTOK, alt: 'TikTok', href: SOCIALS.TikTok },
+  { src: YOUTUBE, alt: 'YouTube', href: SOCIALS.YouTube },
 ];
 
 function Socials() {
   return (
     <div className='contact_socials'>
       {socials.map((item) => (
-        <a key={item.alt} href='#contact' aria-label={item.alt}>
+        <a
+          key={item.alt}
+          href={item.href}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={item.alt}
+        >
           <img src={item.src} alt='' />
         </a>
       ))}
@@ -114,6 +121,8 @@ function Contact() {
         </div>
 
         <div className='contact_info'>
+          <hr className='contact_rule' />
+          <div className='contact_panel'>
           <div className='contact_detail'>
             <span className='contact_badge' aria-hidden='true'>
               <svg viewBox='0 0 24 24'>
@@ -122,7 +131,7 @@ function Contact() {
             </span>
             <div>
               <p className='contact_kicker'>Call now</p>
-              <a href='tel:+19161234567'>+1(916) 123-4567</a>
+              <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
               <p className='contact_note'>We're here to help!</p>
             </div>
           </div>
@@ -141,6 +150,7 @@ function Contact() {
           </div>
 
           <Socials />
+          </div>
         </div>
       </div>
 
@@ -174,12 +184,12 @@ function Contact() {
 
         <div className='contact_reach'>
           <p className='contact_foot_label'>Connect</p>
-          <a href='mailto:info@autobrain.pro'>info@autobrain.pro</a>
-          <a className='contact_phone_desk' href='tel:+19159159999'>
-            +1-915-915-9999
+          <a href={EMAIL_MAILTO}>{EMAIL}</a>
+          <a className='contact_phone_desk' href={PHONE_TEL}>
+            {PHONE_DISPLAY}
           </a>
-          <a className='contact_phone_mobile' href='tel:+19161234567'>
-            +1 (916) 123-4567
+          <a className='contact_phone_mobile' href={PHONE_TEL}>
+            {PHONE_DISPLAY}
           </a>
           <Socials />
         </div>
@@ -192,11 +202,11 @@ function Contact() {
         <span className='contact_copy_short'>© Copyright | qwebfactory</span>
       </p>
 
-      <a className='contact_callbar' href='tel:+19161234567'>
+      <a className='contact_callbar' href={PHONE_TEL}>
         <svg viewBox='0 0 24 24' aria-hidden='true'>
           <path d='M7 3.5h3.2l1 3.2-2 1.2a12 12 0 0 0 5.9 5.9l1.2-2 3.2 1V20a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5L7 3.5Z' />
         </svg>
-        Call now: +1 (916) 123-4567
+        Call now: {PHONE_DISPLAY}
       </a>
     </section>
   );

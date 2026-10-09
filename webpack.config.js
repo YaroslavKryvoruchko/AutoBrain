@@ -1,6 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const pkg = require('./package.json');
+
+function productionPublicPath() {
+  if (!pkg.homepage) return '/';
+
+  const { pathname } = new URL(pkg.homepage);
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -13,7 +21,7 @@ module.exports = (env, argv) => {
         ? 'static/js/[name].[contenthash:8].js'
         : 'static/js/[name].js',
       assetModuleFilename: 'static/media/[name].[hash:8][ext]',
-      publicPath: '/',
+      publicPath: isProduction ? productionPublicPath() : '/',
       clean: true,
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',

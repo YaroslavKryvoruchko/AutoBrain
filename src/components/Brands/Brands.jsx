@@ -9,6 +9,7 @@ import BENTLEY from '../../asset/brands/bentley.png';
 import MCLAREN from '../../asset/brands/mclaren.png';
 import KOENIGSEGG from '../../asset/brands/koenigsegg.png';
 import PHONE from '../../asset/hero/phone.svg';
+import { PHONE_TEL } from '../../links';
 
 const brands = [
   { src: BMW, name: 'BMW M' },
@@ -39,7 +40,7 @@ function Brands() {
       <div className='brands_content'>
         <h2>Ready to bring your supercar to life?</h2>
         <div className='brands_actions'>
-          <a className='brands_call' href='tel:+19161234567'>
+          <a className='brands_call' href={PHONE_TEL}>
             Call now
             <img src={PHONE} alt='' />
           </a>

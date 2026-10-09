@@ -7,6 +7,7 @@ import LOCATOON from '../../asset/hero/location.svg';
 import WORLD from '../../asset/hero/world.svg';
 import MEDAL from '../../asset/hero/medal.svg';
 import TOOL from '../../asset/hero/tool.svg';
+import { PHONE_TEL } from '../../links';
 
 function Hero() {
   return (
@@ -19,10 +20,10 @@ function Hero() {
           <br /> diagnostics, programming, and coding.
         </p>
         <div className='hero_center_btn'>
-          <button>
-            <a href='"'>call now</a>
-            <img src={PHONE} alt='phone-icon' />
-          </button>
+          <a className='hero_call' href={PHONE_TEL}>
+            call now
+            <img src={PHONE} alt='' />
+          </a>
           <button className='whatsapp'>
             <a href='"'>whatsapp</a>
             <img src={WHATSAPP_HERO} alt='whatsapp-icon' />

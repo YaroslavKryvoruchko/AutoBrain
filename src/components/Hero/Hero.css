@@ -54,7 +54,8 @@
 
   gap: 1rem;
 
-  button {
+  button,
+  .hero_call {
     display: flex;
     align-items: center;
     justify-content: center;
